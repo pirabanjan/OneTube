@@ -1,6 +1,7 @@
 import base64
 import streamlit as st
 from PIL import Image
+import numpy as np
 
 
 def bg():
@@ -12,10 +13,13 @@ def bg():
     st.markdown(
         f"""
       <style>
-
-       [class="stApp css-ffhzg2 eczokvf1"] {{
+      [class="stApp css-ffhzg2 eczokvf1"] {{
             background: url(data:image/gif;base64,{data_url});
             background-size: cover;
+      }}
+      [data-testid="stHeader"]{{
+        background-color: rgba(0,0,0,0);
+      
       }}
       </style>
       """,
@@ -43,7 +47,7 @@ def main():
     bg()
     autoplay_audio()
     st.title("About US")
-    st.text("GitHub")
+    st.text("Cyber-safety project")
     st.text(""" 
 Readable text is an important type of internet content, such as web pages, job posts, tweets, 
 Facebook posts, and product details. Text-based content can be collected from many sources and used to extract 

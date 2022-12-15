@@ -4,6 +4,7 @@ import time
 import requests
 import json
 import requests
+from streamlit_lottie import st_lottie_spinner
 
 from nltk.tokenize import sent_tokenize
 
@@ -26,10 +27,13 @@ def bg():
     st.markdown(
         f"""
       <style>
-
-       [class="stApp css-ffhzg2 eczokvf1"] {{
+      [class="stApp css-ffhzg2 eczokvf1"] {{
             background: url(data:image/gif;base64,{data_url});
             background-size: cover;
+      }}
+      [data-testid="stHeader"]{{
+        background-color: rgba(0,0,0,0);
+      
       }}
       </style>
       """,
@@ -67,7 +71,7 @@ def main():
     st.set_page_config(
         page_title="Cyber-safety",
         page_icon="🤖",
-        # layout='wide'
+        # layout="wide"
     )
 
     tab1, tab2, tab3 = st.tabs(["Home", "Single-text", "Multi-text"])
